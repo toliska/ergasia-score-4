@@ -2,14 +2,14 @@
 #include<stdio.h>   
 void main()
 {   // dilwsh olon twn metablitwn:
-    char mak[7][7], mak1[8][8], s1, s2;
+    char mak[7][7], mak1[8][8], s1, s2, ap;
     char player1[30], player2[30];
     int i, j, f, won, turn, age1, age2, gematos;
     int move, move2, valid_move1 = 1, valid_move2 = 1;
     //ekxwrhsh arxikwn timwn se pinaka  kai metablites
     f = 1;
-    gematos = 0;
     won = 0;
+    gematos = 0;
     for (i = 0; i <= 6; i++) {
         for (j = 0; j <= 6; j++) {
             mak[i][j] = '-';
@@ -45,11 +45,11 @@ void main()
             printf(" %c ", mak[i][j]);
         }
     }
-
+    // epilogh simbolou apo player1  kai aftomati epilogh gia player2
     printf("\n%s selects symbol ('x' or 'o'): \n", player1);
     do {
         scanf("%c", &s1);
-    } while (s1 != 'X' && s1 != 'O');
+    } while (s1 != 'x' && s1 != 'o');
     if (s1 == 'x') {
         s2 = 'o';
     }
@@ -57,8 +57,11 @@ void main()
         s2 = 'o';
     }
     turn = 0;
+    //arxh prwtou paixnidioy me pinaka 7x7 
     while (won == 0) {
+        // allagh seiras kathe fora pou paizei enas paikths
         if (turn == 0) {
+            //elenxws egkirwthtas kathe kinish paikth
             do {
                 valid_move1 = 1;
                 printf("\n%s's (%c) turn: ",player1, s1);
@@ -74,6 +77,7 @@ void main()
             } while (valid_move1 == 0) ;
             mak[move][move2] = s1;
             mak1[move][move2] = s1;
+            // ektipwsh pinaka paixnidioy
             printf("   0  1  2  3  4  5  6");
             for (i = 0; i <= 6; i++) {
                 printf("\n %d", i);
@@ -111,6 +115,7 @@ void main()
 
         }
         else {
+            // elenxws egkirwthas paixth 2
             do {
                 valid_move1 = 1;
                 printf("\n%s's (%c) turn: ", player2, s2);
@@ -126,6 +131,7 @@ void main()
             } while (valid_move1 == 0);
             mak[move][move2] = s2;
             mak1[move][move2] = s2;
+            // ektipwsh pinaka paixnidiou
             printf("   0  1  2  3  4  5  6");
             for (i = 0; i <= 6; i++) {
                 printf("\n %d", i);
@@ -161,5 +167,21 @@ void main()
             }
             turn = 0;
         }
+        for (i = 0; i <= 6; i++) {
+            for (j = 0; j <= 6; j++) {
+                if (mak[i][j] == '-') {
+                    gematos = 1;
+                } 
+            }
+        }
+        if (gematos == 0) {
+            won = 3;
+        }
+    }
+    printf("\nIsopalia!!!\n");
+    printf("Epithimite na sinexisete to paixnidi? (n/o)\n");
+    scanf("%c", &ap);
+    if (ap == 'n') {
+        printf("to paixnidi sinexizete");
     }
 }
