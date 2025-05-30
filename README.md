@@ -56,7 +56,6 @@ If the game ends in a tie, the players are given a second chance to win on an **
 ---
 
 ## 📸 Sample Gameplay (Console Output)
-## 📸 Sample Gameplay (Console Output)
 
 ```
 		Welcome to Score-4 Game for 2
