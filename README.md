@@ -56,20 +56,55 @@ If the game ends in a tie, the players are given a second chance to win on an **
 ---
 
 ## 📸 Sample Gameplay (Console Output)
-Welcome to Score-4 Game for 2
-Player 1: John
-Player 2: John
-!!!Names are identical setting automatically player2 name to John2
+## 📸 Sample Gameplay (Console Output)
+
+```
+		Welcome to Score-4 Game for 2
+   0  1  2  3  4  5  6
+ 0 -  -  -  -  -  -  -
+ 1 -  -  -  -  -  -  -
+ 2 -  -  -  -  -  -  -
+ 3 -  -  -  -  -  -  -
+ 4 -  -  -  -  -  -  -
+ 5 -  -  -  -  -  -  -
+ 6 -  -  -  -  -  -  -
+
+  Please insert player names 
+Player 1: 
+John
+Player 2: 
+John
+
+!!!Names are identical setting automatically player2 name to John2 
+
+Please insert ages of John and John2
+25 22
 
 Welcome John, John2
 
-John selects symbol ('x' or 'o'): x
+John selects symbol ('x' or 'o'): 
+x
+
 John2 will use o
 
-0 1 2 3 4 5 6
-0 - - - - - - -
-1 - - - - - - -
+John's (x) turn: 3
+John2's (o) turn: 3
+John's (x) turn: 4
+John2's (o) turn: 2
 ...
+
+   0  1  2  3  4  5  6
+ 0 -  -  -  -  -  -  -
+ 1 -  -  -  -  -  -  -
+ 2 -  -  -  -  -  -  -
+ 3 -  -  o  x  -  -  -
+ 4 -  -  o  x  -  -  -
+ 5 -  -  o  x  -  -  -
+ 6 -  -  o  x  -  -  -
+
+Congratulations John is the winner!!!
+Thanks for playing Score 4 game for 2!!!!
+```
 ## 👨‍💻 Author
 
 **Apostolos Katsios**  
