@@ -106,9 +106,8 @@ Thanks for playing Score 4 game for 2!!!!
 ```
 ## 👨‍💻 Author
 
-**Apostolos Katsios**  
-🆔 AEM: 24075  
-📧 Email: apokatsi@ihu.gr
+**Apostolos Katsios**    
+📧 Email: apostoliskatsios@gmail.com
 
 ---
 
