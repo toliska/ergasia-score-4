@@ -26,12 +26,12 @@ read_text(char str[], int size, int flag)
     return len;
 }
 void main()
-{   
+{   // dilwsh olon twn metablitwn:
     char mak[7][7], mak1[8][8], s1, s2, ap;
     char player1[30], player2[30];
     int i, j, f, won, turn, age1, age2, count, epaikse, gematos;
     int move, move2, valid_move1 = 1, valid_move2 = 1;
-   
+    //ekxwrhsh arxikwn timwn se pinaka  kai metablites
     won = 0;
     gematos = 0;
     count = 0;
@@ -45,7 +45,8 @@ void main()
             mak1[i][j] = '-';
         }
     }
-    
+    //arxh paixnidou
+    //task 1 enarksi
     printf("\t\tWelcome to Score-4 Game for 2\n");
     printf("   0  1  2  3  4  5  6");
     for (i = 0; i <= 6; i++) {
@@ -54,25 +55,26 @@ void main()
             printf(" %c ", mak[i][j]);
         }
     }
-    
+    //dilwsh idiotitwn paixth:
     printf("\n  Please insert player names \nPlayer 1: \n");
     read_text(player1, sizeof(player1), 1);
     printf("Player 2: \n");
 
     read_text(player2, sizeof(player2), 1);
-    
+    // elenxos gia idio onoma
     f = strcmp(player1, player2);
     if (f == 0) {
         strcat(player2, "2");
         printf("\n!!!Names are identical setting automatically player2 name to %s \n\n", player2);
     }
+    //elenxos egkirwthtas gia swsth hlikia
     do {
         printf("\nPlease insert ages of %s and %s\n", player1, player2);
         scanf("%i %i", &age1, &age2);
     } while ((age1 <= 0 || age1 >= 120) || (age2 <= 0 || age2 >= 120));
 
 
-    
+    // epilogh prwtou paikth
     if (age2 < age1) {
         turn = 1;
     }
@@ -80,7 +82,9 @@ void main()
         turn = 0;
     }
     printf("\nWelcome %s, %s\n\n", player1, player2);
-    
+    //task 1 telos
+    //task 2
+    // epilogh simbolou apo player1  kai aftomati epilogh gia player2
     if (turn == 0) {
         printf("\n%s selects symbol ('x' or 'o'): \n", player1);
         do {
@@ -105,13 +109,14 @@ void main()
             s1 = 'x';
         }
     }
-    
+    //arxh prwtou paixnidioy me pinaka 7x7 
+    //task 3 arxh
     while (won == 0) {
-        
+        // allagh seiras kathe fora pou paizei enas paikths
         if (turn == 0) {
 
             epaikse = 0;
-            
+            //elenxws egkirwthtas kathe kinish paikth kai elenxos gia gemato pinka
             gematos = 0;
             for (i = 0; i <= 6; i++) {
                 if (mak[0][i] != '-') {
@@ -150,7 +155,9 @@ void main()
 
                 }
             } while (valid_move1 == 0 || won == 3);
-            
+            //task2 telos
+
+            // ektipwsh pinaka paixnidioy
             printf("   0  1  2  3  4  5  6");
             for (i = 0; i <= 6; i++) {
                 printf("\n %d", i);
@@ -158,7 +165,8 @@ void main()
                     printf(" %c ", mak[i][j]);
                 }
             }
-           
+            //elenxos nikhs prwtou paikth
+            // elnxos gia orizontia
             for (i = 0; i < 7; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s1 && mak[i][j + 1] == s1 &&
@@ -167,7 +175,7 @@ void main()
                     }
                 }
             }
-            
+            // elenxos gia katheta
             for (i = 0; i <= 3; i++) {
                 for (j = 0; j < 7; j++) {
                     if (mak[i][j] == s1 && mak[i + 1][j] == s1 &&
@@ -177,7 +185,7 @@ void main()
                 }
             }
 
-            
+            //diagwnios panwAristera-katwDeksia
             for (i = 0; i <= 3; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s1 && mak[i + 1][j + 1] == s1 &&
@@ -186,7 +194,7 @@ void main()
                     }
                 }
             }
-            
+            //diagwnios katwDeksia-PanwAristera
             for (i = 3; i < 7; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s1 && mak[i - 1][j + 1] == s1 &&
@@ -200,9 +208,9 @@ void main()
 
         }
         else {
-            
+            // elenxws egkirwthas paixth 2
             epaikse = 0;
-            
+            //elenxws gia isopalia
             for (i = 0; i <= 6; i++) {
                 if (mak[0][i] != '-') {
                     gematos = gematos + 1;
@@ -211,7 +219,7 @@ void main()
             if (gematos == 7) {
                 won = 3;
             }
-        
+            //elenxws egkirwthtas kathe kinish paikth
             do {
                 valid_move1 = 1;
                 printf("\n%s's (%c) turn: ", player2, s2);
@@ -243,7 +251,7 @@ void main()
 
                 }
             } while (valid_move1 == 0 || won == 3);
-            
+            // ektipwsh pinaka paixnidiou
             printf("   0  1  2  3  4  5  6");
             for (i = 0; i <= 6; i++) {
                 printf("\n %d", i);
@@ -251,7 +259,8 @@ void main()
                     printf(" %c ", mak[i][j]);
                 }
             }
-            
+            //elenxos nikhs defterou paikth
+            // elnxos gia orizontia
             for (i = 0; i < 7; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s2 && mak[i][j + 1] == s2 &&
@@ -260,7 +269,7 @@ void main()
                     }
                 }
             }
-            
+            // elenxos gia katheta
             for (i = 0; i <= 3; i++) {
                 for (j = 0; j < 7; j++) {
                     if (mak[i][j] == s2 && mak[i + 1][j] == s2 &&
@@ -270,7 +279,7 @@ void main()
                 }
             }
 
-           
+            //diagwnios panwAristera-katwDeksia
             for (i = 0; i <= 3; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s2 && mak[i + 1][j + 1] == s2 &&
@@ -279,7 +288,7 @@ void main()
                     }
                 }
             }
-            
+            //diagwnios katwDeksia-PanwAristera
             for (i = 3; i < 7; i++) {
                 for (j = 0; j <= 3; j++) {
                     if (mak[i][j] == s2 && mak[i - 1][j + 1] == s2 &&
@@ -293,7 +302,7 @@ void main()
 
 
     }
-
+    //task 3 telos
     if (won == 3) {
         printf("\nDraw\n");
         printf("Epithimite na sinexisete to paixnidi? (n/o)\n");
@@ -313,12 +322,13 @@ void main()
             printf("Thanks for playing Score 4 game for 2!!!!\n");
         }
     }
-
+    //task 4 arxh
     while (won == 4) {
- 
+        // allagh seiras kathe fora pou paizei enas paikths
         if (turn == 0) {
 
             epaikse = 0;
+            //elenxws egkirwthtas kathe kinish paikth
             do {
                 valid_move1 = 1;
                 printf("\n%s's (%c) turn: ", player1, s1);
@@ -348,6 +358,7 @@ void main()
                 }
             } while (valid_move1 == 0);
 
+            // ektipwsh pinaka paixnidioy
             printf("   0  1  2  3  4  5  6  7");
             for (i = 0; i <= 7; i++) {
                 printf("\n %d", i);
@@ -355,6 +366,8 @@ void main()
                     printf(" %c ", mak1[i][j]);
                 }
             }
+            //elenxos nikhs prwtou paikth
+            // elnxos gia orizontia
             for (i = 0; i < 8; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s1 && mak1[i][j + 1] == s1 &&
@@ -363,6 +376,7 @@ void main()
                     }
                 }
             }
+            // elenxos gia katheta
             for (i = 0; i <= 4; i++) {
                 for (j = 0; j < 8; j++) {
                     if (mak1[i][j] == s1 && mak1[i + 1][j] == s1 &&
@@ -372,6 +386,7 @@ void main()
                 }
             }
 
+            //diagwnios panwAristera-katwDeksia
             for (i = 0; i <= 4; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s1 && mak1[i + 1][j + 1] == s1 &&
@@ -380,6 +395,7 @@ void main()
                     }
                 }
             }
+            //diagwnios katwDeksia-PanwAristera
             for (i = 3; i < 8; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s1 && mak1[i - 1][j + 1] == s1 &&
@@ -393,7 +409,9 @@ void main()
 
         }
         else {
+            // elenxws egkirwthas paixth 2
             epaikse = 0;
+            //elenxws egkirwthtas kathe kinish paikth
             do {
                 valid_move1 = 1;
                 printf("\n%s's (%c) turn: ", player2, s2);
@@ -424,6 +442,7 @@ void main()
 
                 }
             } while (valid_move1 == 0);
+            // ektipwsh pinaka paixnidiou
             printf("   0  1  2  3  4  5  6  7");
             for (i = 0; i <= 7; i++) {
                 printf("\n %d", i);
@@ -431,6 +450,8 @@ void main()
                     printf(" %c ", mak1[i][j]);
                 }
             }
+            //elenxos nikhs defterou paikth
+            // elnxos gia orizontia
             for (i = 0; i < 8; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s2 && mak1[i][j + 1] == s2 &&
@@ -439,6 +460,7 @@ void main()
                     }
                 }
             }
+            // elenxos gia katheta
             for (i = 0; i <= 4; i++) {
                 for (j = 0; j < 8; j++) {
                     if (mak1[i][j] == s2 && mak1[i + 1][j] == s2 &&
@@ -448,6 +470,7 @@ void main()
                 }
             }
 
+            //diagwnios panwAristera-katwDeksia
             for (i = 0; i <= 4; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s2 && mak1[i + 1][j + 1] == s2 &&
@@ -456,6 +479,7 @@ void main()
                     }
                 }
             }
+            //diagwnios katwDeksia-PanwAristera
             for (i = 3; i < 8; i++) {
                 for (j = 0; j <= 4; j++) {
                     if (mak1[i][j] == s2 && mak1[i - 1][j + 1] == s2 &&
@@ -466,6 +490,7 @@ void main()
             }
             turn = 0;
         }
+        //elenxos gia isopalia
         gematos = 0;
         for (i = 0; i <= 7; i++) {
             for (j = 0; j <= 7; j++) {
@@ -494,6 +519,7 @@ void main()
         printf("\nCongratulations for players %s, %s for draw!!!", player1, player2);
         printf("Thanks for playing Score 4 game for 2!!!!\n");
     }
+    //task 4 telos
 
 
 
